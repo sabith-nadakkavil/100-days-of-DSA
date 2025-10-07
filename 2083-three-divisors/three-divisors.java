@@ -5,6 +5,9 @@ class Solution {
             if (n%i == 0){
                 count++;
             }
+            if(count>4){
+                break;
+            }
         }
         return count == 3 ? true : false;
     }
