@@ -4,11 +4,8 @@ class Solution {
         for (int i = 0; i < prices.length; i++ ){
             if (prices[i] < min){
                 min = prices[i];
-            }
-            int currentProfit = prices[i] - min;
-            if (currentProfit > profit){
-                profit = currentProfit;
-            }
+            } else if (prices[i] - min > profit)
+                profit = prices[i] - min;
         }
         return profit;
     }
