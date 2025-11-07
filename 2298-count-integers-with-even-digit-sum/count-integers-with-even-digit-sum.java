@@ -1,21 +1,10 @@
 class Solution {
     public int countEven(int num) {
-        int ans = 0;
-        for(int i = 1; i <= num; i++){
-            int sum = sumDigit(i);
-            if(sum % 2 == 0){
-                ans++;
-            }
+        int sum = 0, n = num;
+        while(n > 0){
+            sum += n%10;
+            n /= 10;
         }
-        return ans;
-    }
-
-    private int sumDigit(int i){
-        int sum = 0;
-        while(i > 0){
-            sum += i%10;
-            i /= 10;
-        }
-        return sum;
+        return (sum % 2 == 0) ? num/2 : (num -1)/ 2;
     }
 }
